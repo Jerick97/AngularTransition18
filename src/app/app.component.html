@@ -30,7 +30,14 @@
         complejas, además de que emplea HTML dinámico. También permite una mejora en la visualización de una página web,
         sobre todo cuando contiene una gran cantidad de datos.
     </p>
+
+    @defer (on viewport){
     <app-comments />
+    } @placeholder {
+    <p>Futuros Comentarios</p>
+    } @loading {
+    <p>Cargando comentarios ...</p>
+    }
 </div>
 
 <router-outlet />
