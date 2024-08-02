@@ -1,9 +1,28 @@
-h2 {
-  color: rgb(18, 136, 233);
+.navbar {
+  max-width: 540px;
+  margin: 0 auto;
 }
 
-div {
-  max-width: 500px;
-  font-size: 32px;
-  margin: 0 auto;
+.navbar-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar-item {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 5px 15px;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.active {
+  font-weight: 900;
+  color: rgb(18, 136, 233) !important;
 }
