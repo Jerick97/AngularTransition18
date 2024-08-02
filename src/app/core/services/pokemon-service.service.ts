@@ -1,7 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { PokemonResults } from '../../interfaces/pokemon';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -10,21 +11,8 @@ export class PokemonServiceService {
   constructor(private http: HttpClient) {}
 
   getPokemonList(): Observable<PokemonResults> {
-    return this.http
-      .get<PokemonResults>(
-        'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
-      )
-      .pipe(
-        catchError((error: HttpErrorResponse) => {
-          let errorMessage = '';
-          if (error.error instanceof ErrorEvent) {
-            errorMessage = `Error: ${error.error.message}`;
-          } else {
-            errorMessage = `Error code: ${error.status}; message: ${error.message}`;
-          }
-
-          return throwError(() => errorMessage);
-        })
-      );
+    return this.http.get<PokemonResults>(
+      `${environment.apiURLBase}pokemon?limit=10&offset=0`
+    );
   }
 }
