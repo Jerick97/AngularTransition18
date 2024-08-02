@@ -3,7 +3,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommentsComponent } from './comments/comments.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
-
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
     HomeComponent,
     CommentsComponent,
     AboutComponent,
+    PokemonComponent,
     RouterLink,
     RouterLinkActive,
   ],
